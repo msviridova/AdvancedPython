@@ -7,17 +7,16 @@
 ранее сумме и после этого завершить программу."""
 
 sum = 0
-print("Введите строку из чисел, разделенных пробелом")
-number_string = input().split(' ')
-print(number_string)
 
-while 1:
+while True:
+    print("Введите строку из чисел, разделенных пробелом")
     number_string = input().split(' ')
 
     try:
         for i in number_string:
             sum += int(i)
-    except:
+    except Exception as err:
         print(sum)
+        print(err)
         break
     print(sum)
