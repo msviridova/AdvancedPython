@@ -7,16 +7,22 @@
 ранее сумме и после этого завершить программу."""
 
 sum = 0
+exit_marker = True
 
-while True:
+while exit_marker:
     print("Введите строку из чисел, разделенных пробелом")
     number_string = input().split(' ')
 
-    try:
-        for i in number_string:
-            sum += int(i)
-    except Exception as err:
-        print(sum)
-        print(err)
-        break
+    for i in number_string:
+        if i == 'q':
+            exit_marker = False
+            break
+        else:
+            try:
+                sum += int(i)
+            except Exception as err:
+                print(err)
+                exit_marker = False
+                break
     print(sum)
+
