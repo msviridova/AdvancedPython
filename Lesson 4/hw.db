@@ -21,6 +21,7 @@ create table if not exists orders (
     creator_id INTEGER REFERENCES employees (employee_id)
     )
 
+some test
 
 
 
